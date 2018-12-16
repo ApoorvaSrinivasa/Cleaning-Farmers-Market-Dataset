@@ -1,0 +1,76 @@
+#create database called farmersmarket
+sqlite3 farmermarket.db
+
+.header on
+.mode csv
+
+#create an empty table and define the datatypes for its attributes
+CREATE TABLE farmersmarket(
+	"FMID"	INTEGER ,
+	"MarketName" TEXT,
+	"Website"	TEXT,
+	"Facebook"	TEXT,
+	"Twitter"	TEXT,
+	"Youtube"	TEXT,
+	"OtherMedia"	TEXT,
+	"street"	TEXT,
+	"City"	TEXT,
+	"County"	TEXT,
+	"State"	TEXT,
+	"zip"	INTEGER,
+	"derived_zip" INTEGER,
+	"Season1StartMonth"	NUMERIC,
+	"Season1EndMonth"	NUMERIC,
+	"Season1Time"	NUMERIC,
+	"x"	REAL,
+	"y"	REAL,
+	"Location"	INTEGER,
+	"Credit"	INTEGER,
+	"WIC"	INTEGER,
+	"WICcash"	INTEGER,
+	"SFMNP"	INTEGER,
+	"SNAP"	INTEGER,
+	"Organic"	INTEGER,
+	"Bakedgoods"	INTEGER,
+	"Cheese"	INTEGER,
+	"Crafts"	INTEGER,
+	"Flowers"	INTEGER,
+	"Eggs"	INTEGER,
+	"Seafood"	INTEGER,
+	"Herbs"	INTEGER,
+	"Vegetables"	INTEGER,
+	"Honey"	INTEGER,
+	"Jams"	INTEGER,
+	"Maple"	INTEGER,
+	"Meat"	INTEGER,
+	"Nursery"	INTEGER,
+	"Nuts"	INTEGER,
+	"Plants"	INTEGER,
+	"Poultry"	INTEGER,
+	"Prepared"	INTEGER,
+	"Soap"	INTEGER,
+	"Trees"	INTEGER,
+	"Wine"	INTEGER,
+	"Coffee"	INTEGER,
+	"Beans"	INTEGER,
+	"Fruits"	INTEGER,
+	"Grains"	INTEGER,
+	"Juices"	INTEGER,
+	"Mushrooms"	INTEGER,
+	"PetFood"	INTEGER,
+	"Tofu"	INTEGER,
+	"WildHarvested"	INTEGER,
+	"updateTime"	INTEGER
+);
+
+#check if the table is created
+.tables
+
+#import csv
+ .import /Users/apoorvasrinivas/Downloads/Python.csv farmersmarket
+
+
+
+
+
+

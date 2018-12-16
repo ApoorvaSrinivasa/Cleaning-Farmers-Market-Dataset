@@ -1,0 +1,111 @@
+'''
+@begin OpenRefine_Workflow @desc Workflow of the cleaning done with OR
+@in farmersmarkets.csv @uri file://users/data/farmersmarkets.csv
+
+    @begin CleanWithOpenRefine @desc Load the data into OpenRefine for cleaning
+    @in farmersmarkets.csv @uri file://users/data/farmersmarkets.cv
+    @out Column:MarketName
+    @out Column:Website
+    @out Column:Facebook
+    @out Column:Twitter
+    @out Column:YouTube
+    @out Column:OtherMedia
+    @out Column:Twitter
+    @out Column:street
+    @out Column:city
+    @out Column:updateTime
+    @out Column:Season1Date
+    @end CleanWithOpenRefine
+
+
+    @begin TrimWhitespace @desc Trim leading and trailing whitespace
+    @in Column:MarketName
+    @in Column:Website
+    @in Column:Facebook
+    @in Column:Twitter
+    @in Column:YouTube
+    @in Column:OtherMedia
+    @in Column:street
+    @in Column:city
+    @in Column:Season1Date
+    @out Column:MarketName1
+    @out Column:Website1
+    @out Column:Facebook1
+    @out Column:Twitter1
+    @out Column:YouTube1
+    @out Column:OtherMedia1
+    @out Column:street1
+    @out Column:city1
+    @out Column:Season1Date1
+    @end TrimWhitespace
+
+    @begin CollapseSpaces @desc Collapse consecutive white space
+    @in Column:MarketName
+    @in Column:Facebook
+    @in Column:OtherMedia
+    @in Column:street
+    @in Column:city
+    @in Column:updateTime
+    @out Column:MarketName1
+    @out Column:Facebook1
+    @out Column:OtherMedia1
+    @out Column:street1
+    @out Column:city1
+    @out Column:updateTime1
+    @end TrimColumns
+
+    @begin NA_Treatment @desc Change all NA/No/None to blank
+    @in Column:Facebook1
+    @in Column:Twitter1
+    @in Column:YouTube1
+    @param Transform:to_text
+    @out Column:Facebook2
+    @out Column:Twitter2
+    @out Column:YouTube2
+    @end NA_Treatment
+
+    @begin Cluster_values @desc Cluster cells with similar text
+    @in Column:Website1
+    @in Column:city1
+    @in Column:County
+    @out Column:Website2
+    @out Column:city2
+    @out Column:County1
+    @end NA_Treatment
+
+    @begin Create_standard_Template @desc Convert all the social media profile names to their respective links
+    @in Column:Facebook2
+    @in Column:Twitter2
+    @in Column:YouTube2
+    @out Column:Facebook3
+    @out Column:Twitter3
+    @out Column:YouTube3
+    @end Create_standard_Template
+
+    @begin Split_column @desc split Season1Date into start and end months
+    @in Column:Season1Date1
+    @out Column:Season1StartMonth
+    @out Column:Season1EndMonth
+    @end Split_column
+
+    @begin Combine_changes @desc Combine all data cleaning changes
+    @in Column:Facebook3
+    @in Column:Twitter3
+    @in Column:YouTube3
+    @in Column:Season1StartMonth
+    @in Column:Season1EndMonth
+    @in Column:County1
+    @in Column:Website2
+    @in Column:city2
+    @in Column:OtherMedia1
+    @in Column:MarketName1
+    @in Column:updateTime1
+    @in Column:street1
+    @out farmersmarkets_OpenRefine.csv @uri file://users/data/farmersmarkets_OpenRefine.csv
+    @end Combine_changes
+
+
+
+@out farmersmarkets_OpenRefine.csv @uri file://users/data/farmersmarkets_OpenRefine.csv
+@end Overall_Data_Cleaning
+'''

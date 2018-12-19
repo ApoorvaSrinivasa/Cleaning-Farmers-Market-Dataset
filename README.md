@@ -18,3 +18,7 @@ Logical integrity constraints (ICs) are identified after loading the data into a
 YesWorkflow is used to create a workflow model of entire project. The following questions can be answered using the workflow: what are the key inputs and outputs of workflow? What are the dependencies? A visual version of the workflow is also created  using the YesWorkflow tool.
 
 ## The Data
+The dataset chosen for the final project is a U.S Farmer’s Market dataset. A Farmer’s market is a business run by the farmers themselves, where-in, they sell their produce directly to the customers. 
+The dataset consists of information about various farmer's markets throughout the U.S, such as, location of the market, its social networking accounts, active months, mode of payment, goods sold etc.
+
+Sourcs : https://www.ams.usda.gov/local-food-directories/farmersmarkets

@@ -22,4 +22,4 @@ Logical integrity constraints (ICs) are identified after loading the data into a
 YesWorkflow is used to create a workflow model for the entire project. The following questions can be answered using the workflow: what are the key inputs and outputs of workflow? What are the dependencies? A visual version of the workflow is also created using the YesWorkflow tool.
 
 
-Sources : https://www.ams.usda.gov/local-food-directories/farmersmarkets
+Source for the data : https://www.ams.usda.gov/local-food-directories/farmersmarkets
